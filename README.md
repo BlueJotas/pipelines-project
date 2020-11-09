@@ -2,7 +2,7 @@
 
 ![alt text](https://memegenerator.net/img/instances/81049728.jpg)
 
-### This project is focused in this things:
+## This project is focused in this things:
 
 **- Finding a dataset and cleaning it up!**
 
