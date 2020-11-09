@@ -5,8 +5,11 @@
 ### This project is focused in this things:
 
 **- Finding a dataset and cleaning it up!**
+
 **- Enrich the set with external data or create another dataset as long as is related in order to analize both of them at the same time.**
+
 **- Getting the data from an API or via webscraping.**
+
 **- Create some reports and visualizations to understand the analysis and to get a valuable hypothesis!**
 
 The selected dataset is about reviews on different 'Bluetooth Earphones' from the Amazon webpage (in india). In this dataset we actually find that there's two
