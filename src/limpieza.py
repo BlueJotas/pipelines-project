@@ -1,0 +1,62 @@
+import time
+import pandas as pd
+
+def dataset1():
+    print('Loading dataset...')
+    time.sleep(1)
+    df = pd.read_csv('./Data/AllProductReviews.csv')
+    print(df)
+    print('Examining dataset...')
+    time.sleep(3)
+    print('Printing relevant information.')
+    time.sleep(2)
+    print(df["Product"].describe())
+    time.sleep(2)
+    print(df["ReviewTitle"].describe())
+    time.sleep(2)
+    print(df["ReviewBody"].describe())
+    time.sleep(2)
+    print(df['ReviewStar'].describe())
+    time.sleep(3)
+
+
+
+def dataset2():
+    print('Loading second dataset...')
+    time.sleep(1)
+    df_products = pd.read_csv('./Data/ProductInfo.csv')
+    print(df_products)
+    print('Examining dataset...')
+    time.sleep(3)
+    print('CLEANING DATASET...')
+    time.sleep(2)
+    print('Dropping unnecessary columns...')
+    time.sleep(2)
+    df_products.drop(["id"], axis=1, inplace=True)
+    df_products.drop(["ReviewURL"], axis=1, inplace=True)
+    print(df_products)
+    print('Converting rupees to euros...')
+    time.sleep(2)
+    prices_eur = []
+    for i in df_products["Price"]:
+        eur = round(float(i/87.8529))
+        prices_eur.append(eur)
+    print('Dropping old column...')
+    time.sleep(2)
+    df_products.drop(["Price"], axis=1, inplace=True)
+    df_products.drop(["MRP"], axis=1, inplace=True)
+    print('Appending new column with selected currency...')
+    df_products["Prices"] = prices_eur
+    time.sleep(2.5)
+    print('All processes completed.')
+    print(df_products)
+    print('.')
+    time.sleep(0.5)
+    print('..')
+    time.sleep(0.5)
+    print('...')
+    time.sleep(0.5)
+    print('Saving clean version of the second dataset...')
+    time.sleep(2)
+    df_products.to_csv('./Data/NewProductInfo.csv')
+    print('Ready!')
